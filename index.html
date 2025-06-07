@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Huynh Hoang Anh - IT Professional</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#f97316" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      }
+      .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      top: 3rem;
+      bottom: -2rem;
+      width: 2px;
+      background: #e5e7eb;
+      }
+      .timeline-dot {
+      position: absolute;
+      left: 1.5rem;
+      top: 1.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: #4f46e5;
+      transform: translateX(-50%);
+      z-index: 10;
+      }
+      .skill-hexagon {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: all 0.3s ease;
+      }
+      .skill-hexagon:hover {
+      transform: translateY(-5px);
+      }
+      .project-card {
+      transition: all 0.3s ease;
+      }
+      .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .tool-card {
+      transition: all 0.3s ease;
+      }
+      .tool-card:hover {
+      transform: scale(1.05);
+      }
+      input:focus, textarea:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-['Pacifico'] text-primary">HHA</div>
+        <nav class="hidden md:flex space-x-8">
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#tools"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Tools</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Contact</a
+          >
+        </nav>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-700"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white shadow-lg absolute w-full"
+      >
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >Projects</a
+          >
+          <a
+            href="#tools"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >Tools</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section
+      id="about"
+      class="relative py-20 overflow-hidden"
+      style="background-image: url('https://readdy.ai/api/search-image?query=abstract%2520professional%2520technology%2520background%2520with%2520blue%2520and%2520purple%2520gradient%2520elements%252C%2520subtle%2520geometric%2520patterns%252C%2520clean%2520minimalist%2520design%252C%2520suitable%2520for%2520IT%2520professional%2520website%252C%2520with%2520empty%2520space%2520on%2520left%2520side%2520for%2520text%2520content&width=1920&height=1080&seq=hero01&orientation=landscape'); background-size: cover; background-position: center right;"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"
+      ></div>
+      <div class="container mx-auto px-6 relative">
+        <div class="flex flex-col md:flex-row items-center w-full">
+          <div class="w-full md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Huynh Hoang Anh
+            </h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-primary mb-6">
+              IT Solution Consultant
+            </h2>
+            <p class="text-gray-700 mb-8 max-w-lg">
+              Experienced functional analyst and consultant with extensive
+              knowledge of various operational formats and sales platforms in
+              both offline retail and e-commerce. Passionate about bridging
+              business needs with technical solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <div class="flex items-center gap-2 text-gray-700">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
+                >
+                  <i class="ri-map-pin-line ri-lg"></i>
+                </div>
+                <span>Phu Nhuan, Ho Chi Minh</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
+                >
+                  <i class="ri-phone-line ri-lg"></i>
+                </div>
+                <span>0777 717 991</span>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <a
+                href="#contact"
+                class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+                >Contact Me</a
+              >
+              <a
+                href="#"
+                class="bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap flex items-center gap-2"
+              >
+                <i class="ri-download-line"></i>
+                Download CV
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+            <div
+              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl"
+            >
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520portrait%2520of%2520Asian%2520male%2520IT%2520consultant%252C%2520business%2520casual%2520attire%252C%2520confident%2520expression%252C%2520neutral%2520background%252C%2520high%2520quality%2520professional%2520headshot%252C%2520studio%2520lighting%252C%2520sharp%2520focus&width=800&height=800&seq=profile01&orientation=squarish"
+                alt="Huynh Hoang Anh"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">My Skills</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Retail & E-Commerce -->
+          <div
+            class="bg-gradient-to-br from-purple-500/10 to-purple-500/20 p-8 text-center flex flex-col items-center rounded-lg"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-purple-500/20 mb-4"
+            >
+              <i class="ri-store-2-line ri-2x text-purple-500"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Retail & E-Commerce
+            </h3>
+            <ul class="text-gray-700 space-y-2">
+              <li>POS Systems</li>
+              <li>Magento (Adobe Commerce)</li>
+              <li>Loyalty Programs</li>
+              <li>Warehouse Management System (WMS)</li>
+            </ul>
+          </div>
+          <!-- Business Analysis -->
+          <div
+            class="bg-gradient-to-br from-primary/10 to-primary/20 p-8 text-center flex flex-col items-center rounded-lg"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/20 mb-4"
+            >
+              <i class="ri-line-chart-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Business Analysis
+            </h3>
+            <ul class="text-gray-700 space-y-2">
+              <li>Requirements Analysis</li>
+              <li>Gap Analysis</li>
+              <li>Process Mapping</li>
+              <li>Documentation</li>
+            </ul>
+          </div>
+          <!-- Project Management -->
+          <div
+            class="bg-gradient-to-br from-orange-500/10 to-orange-500/20 p-8 text-center flex flex-col items-center rounded-lg"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-orange-500/20 mb-4"
+            >
+              <i class="ri-task-line ri-2x text-orange-500"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Project Management & Consulting
+            </h3>
+            <ul class="text-gray-700 space-y-2">
+              <li>Solution Consulting & Evaluation</li>
+              <li>Vendor Management</li>
+              <li>Risk Assessment</li>
+              <li>Resource Planning</li>
+              <li>Implementation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tools & Technologies -->
+    <section id="tools" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Tools & Technologies
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            The technical toolkit I use to deliver effective solutions and
+            analyze business needs.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- DBMS -->
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mr-4"
+              >
+                <i class="ri-database-2-line text-blue-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">DBMS</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                    >MySQL</span
+                  >
+                  <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                    >PL/SQL</span
+                  >
+                  <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                    >SQL Server</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- API -->
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-green-100 mr-4"
+              >
+                <i class="ri-code-box-line text-green-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">API</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-green-50 text-green-700 px-3 py-1 rounded-full"
+                    >Postman</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Wireframe -->
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 mr-4"
+              >
+                <i class="ri-layout-2-line text-purple-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Wireframe</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full"
+                    >Figma</span
+                  >
+                  <span
+                    class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full"
+                    >Draw.io</span
+                  >
+                  <span
+                    class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full"
+                    >Balsamiq</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Issue & Backlog Management -->
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 mr-4"
+              >
+                <i class="ri-git-branch-line text-orange-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">
+                  Issue & Backlog Management
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full"
+                    >Gitlab</span
+                  >
+                  <span
+                    class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full"
+                    >Jira</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Professional Experience
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            My career journey through various roles in IT consulting, business
+            analysis, and project management.
+          </p>
+        </div>
+        <div class="relative max-w-4xl mx-auto">
+          <!-- Freelance Business Analyst -->
+          <div class="timeline-item relative pl-12 pb-16">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Business Analyst
+                  </h3>
+                  <p class="text-primary font-medium">Freelance</p>
+                </div>
+                <div class="mt-2 md:mt-0 text-gray-600">
+                  January 2025 - Present
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- LMS Project -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 mr-3"
+                    >
+                      <i class="ri-book-open-line text-blue-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Learning Management System
+                      </h4>
+                      <p class="text-sm text-gray-600">University Project</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700">
+                    <p>
+                      Developed comprehensive use case documentation and
+                      executed User Acceptance Testing for a university Learning
+                      Management System.
+                    </p>
+                    <div class="flex items-center gap-2 text-sm">
+                      <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded"
+                        >Use Case Documentation</span
+                      >
+                      <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded"
+                        >UAT</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Waste Treatment Project -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 mr-3"
+                    >
+                      <i class="ri-recycle-line text-green-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Waste Treatment Management
+                      </h4>
+                      <p class="text-sm text-gray-600">Environmental Project</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700">
+                    <p>
+                      Analyzed requirements to estimate budget and resource
+                      needs for project bidding in a waste treatment management
+                      initiative.
+                    </p>
+                    <div class="flex items-center gap-2 text-sm">
+                      <span
+                        class="bg-green-100 text-green-800 px-2 py-1 rounded"
+                        >Requirements Analysis</span
+                      >
+                      <span
+                        class="bg-green-100 text-green-800 px-2 py-1 rounded"
+                        >Budget Estimation</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Aden Vietnam -->
+          <div class="timeline-item relative pl-12 pb-16">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    IT Customer Solution Consultant
+                  </h3>
+                  <p class="text-primary font-medium">Aden Vietnam</p>
+                </div>
+                <div class="mt-2 md:mt-0 text-gray-600">
+                  January 2024 - June 2024 (6-month contract)
+                </div>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Aden is a leading international group in the field of Integrated
+                Facility Management solutions with 25 years of experience,
+                designing and delivering high-quality services to over 200
+                clients nationwide, supported by more than 3,700 employees from
+                3 representative offices in Hanoi, Da Nang, and Ho Chi Minh
+                City.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Food Court Project -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-100 mr-3"
+                    >
+                      <i class="ri-restaurant-line text-orange-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Factory Food Court Solution
+                      </h4>
+                      <p class="text-sm text-gray-600">POS & Mobile App</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700">
+                    <div class="flex flex-wrap gap-2 mb-2">
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >9 Brands</span
+                      >
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >3,000 Users</span
+                      >
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >2,500 Transactions/Day</span
+                      >
+                    </div>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                      <li>Identified client's goals and requirements</li>
+                      <li>Conducted gap analysis and risk assessment</li>
+                      <li>Evaluated solution vendors</li>
+                      <li>Developed solution proposals and UI/UX design</li>
+                      <li>Reviewed proposals and contracts</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Canteen Project -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-purple-100 mr-3"
+                    >
+                      <i class="ri-calendar-check-line text-purple-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Factory Canteen Meal Booking
+                      </h4>
+                      <p class="text-sm text-gray-600">In-house Development</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700">
+                    <div class="flex flex-wrap gap-2 mb-2">
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >1,500 Users</span
+                      >
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >2,500 Transactions/Day</span
+                      >
+                    </div>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                      <li>Analyzed business and functional requirements</li>
+                      <li>Procured necessary equipment</li>
+                      <li>Conducted UAT and managed go-live process</li>
+                      <li>Provided post-implementation support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- KPS Mall -->
+          <div class="timeline-item relative pl-12 pb-16">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Business Applications Support Lead
+                  </h3>
+                  <p class="text-primary font-medium">KPS Mall</p>
+                </div>
+                <div class="mt-2 md:mt-0 text-gray-600">
+                  December 2021 - February 2023 (1 year 3 months)
+                </div>
+              </div>
+              <p class="text-gray-700 mb-6">
+                KPS Mall is a B2C and B2B e-commerce grocery startup focused on
+                delivering innovative shopping experiences.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- E-commerce Platform -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100 mr-3"
+                    >
+                      <i class="ri-shopping-cart-line text-indigo-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Magento-based E-commerce Platform
+                      </h4>
+                      <p class="text-sm text-gray-600">Mobile App & Backend</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700 text-sm">
+                    <p>
+                      Led the development and support of Magento-based
+                      e-commerce platform, including mobile apps and backend
+                      systems.
+                    </p>
+                    <div class="mt-2">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=professional%2520screenshot%2520of%2520Magento%2520e-commerce%2520dashboard%2520interface%2520with%2520grocery%2520products%252C%2520clean%2520design%252C%2520showing%2520analytics%2520and%2520product%2520management%2520sections%252C%2520neutral%2520colors%252C%2520high%2520quality%2520UI&width=600&height=400&seq=magento01&orientation=landscape"
+                        alt="Magento Dashboard"
+                        class="w-full h-auto rounded-lg shadow-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- Integration Projects -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 mr-3"
+                    >
+                      <i class="ri-link-m text-teal-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        System Integration Projects
+                      </h4>
+                      <p class="text-sm text-gray-600">
+                        WMS, TMS, B2B Platform
+                      </p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700 text-sm">
+                    <ul class="list-disc list-inside space-y-1">
+                      <li>Analyzed business processes & requirements</li>
+                      <li>Managed requirement & incident backlog (Gitlab)</li>
+                      <li>Conducted UAT and go-live testing</li>
+                      <li>Updated application mockups/wireframes (Figma)</li>
+                      <li>Led hiring process and team development</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >Magento</span
+                      >
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >WMS</span
+                      >
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >TMS</span
+                      >
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >KiotViet</span
+                      >
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >B2B Platform</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Central Retail -->
+          <div class="timeline-item relative pl-12">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Front Office Applications Specialist
+                  </h3>
+                  <p class="text-primary font-medium">Central Retail Vietnam</p>
+                </div>
+                <div class="mt-2 md:mt-0 text-gray-600">
+                  May 2019 - December 2021 (2 years 8 months)
+                </div>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Central Retail is one of the largest multi-format foreign
+                retailers in Vietnam with over 40 stores across multiple formats
+                including grocery, sport & fashion, and playground.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- POS System -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-red-100 mr-3"
+                    >
+                      <i class="ri-terminal-box-line text-red-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Nationwide POS System Replacement
+                      </h4>
+                      <p class="text-sm text-gray-600">40+ Retail Locations</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700 text-sm">
+                    <p>
+                      Led the implementation of a new POS system across all
+                      retail locations, including user training and system
+                      configuration.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 mt-2">
+                      <li>Conducted project implementation across stores</li>
+                      <li>Provided comprehensive business user training</li>
+                      <li>Managed system configuration and setup</li>
+                      <li>Coordinated with IT teams for deployment</li>
+                    </ul>
+                    <div class="mt-2">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=modern%2520retail%2520POS%2520system%2520interface%2520being%2520used%2520in%2520a%2520supermarket%2520setting%252C%2520showing%2520checkout%2520screen%2520with%2520product%2520list%2520and%2520payment%2520options%252C%2520clean%2520UI%252C%2520professional%2520photo&width=600&height=400&seq=pos01&orientation=landscape"
+                        alt="POS System"
+                        class="w-full h-auto rounded-lg shadow-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- In-house Applications -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 mr-3"
+                    >
+                      <i class="ri-code-box-line text-yellow-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        In-house Applications Development
+                      </h4>
+                      <p class="text-sm text-gray-600">
+                        Sales & Loyalty Systems
+                      </p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700 text-sm">
+                    <ul class="list-disc list-inside space-y-1">
+                      <li>Operated nationwide offline POS sales systems</li>
+                      <li>Managed promotion and loyalty programs</li>
+                      <li>Collaborated with business teams on requirements</li>
+                      <li>Designed wireframes for in-house applications</li>
+                    </ul>
+                    <div class="mt-4">
+                      <h5 class="font-medium mb-2">Technical Stack:</h5>
+                      <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                          <i class="ri-database-2-line text-blue-600"></i>
+                          <span>DBMS: PL/SQL, SQL Server</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <i class="ri-api-line text-green-600"></i>
+                          <span>API Testing: Postman</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <i class="ri-task-line text-purple-600"></i>
+                          <span>Project Management: Jira</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Project Highlights -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Project Highlights
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Showcasing key projects that demonstrate my expertise in solution
+            design, implementation, and business analysis.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- LMS Project -->
+          <div
+            class="project-card bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=learning%2520management%2520system%2520interface%2520showing%2520course%2520dashboard%2520with%2520progress%2520tracking%252C%2520modern%2520clean%2520UI%252C%2520educational%2520platform%2520with%2520course%2520modules%2520and%2520assessment%2520sections%252C%2520professional%2520screenshot&width=800&height=400&seq=lms01&orientation=landscape"
+                alt="LMS Project"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Learning Management System
+                  </h3>
+                  <p class="text-gray-600">University Project</p>
+                </div>
+                <div
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  Education
+                </div>
+              </div>
+              <p class="text-gray-700 mb-4">
+                Developed comprehensive use case documentation and executed User
+                Acceptance Testing for a university Learning Management System,
+                ensuring all requirements were met and functionality was
+                properly tested.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Requirements Analysis</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Use Case Documentation</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >UAT</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Education Tech</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100"
+                  >
+                    <i class="ri-user-line text-blue-600"></i>
+                  </div>
+                  <span class="text-gray-700">500+ Users</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100"
+                  >
+                    <i class="ri-calendar-line text-blue-600"></i>
+                  </div>
+                  <span class="text-gray-700">2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Food Court Solution -->
+          <div
+            class="project-card bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=food%2520court%2520POS%2520system%2520and%2520mobile%2520ordering%2520app%2520interface%2520side%2520by%2520side%252C%2520showing%2520menu%2520selection%2520and%2520payment%2520processing%252C%2520modern%2520UI%2520design%252C%2520professional%2520screenshot%2520of%2520restaurant%2520management%2520system&width=800&height=400&seq=foodcourt01&orientation=landscape"
+                alt="Food Court Solution"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Factory Food Court Solution
+                  </h3>
+                  <p class="text-gray-600">Aden Vietnam</p>
+                </div>
+                <div
+                  class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  F&B
+                </div>
+              </div>
+              <p class="text-gray-700 mb-4">
+                Designed and evaluated solutions for a comprehensive food court
+                management system including offline POS and mobile app
+                integration, serving 9 brands and processing 2,500 daily
+                transactions.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >POS</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Mobile App</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Solution Design</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Vendor Evaluation</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-orange-100"
+                  >
+                    <i class="ri-user-line text-orange-600"></i>
+                  </div>
+                  <span class="text-gray-700">3,000 Users</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-orange-100"
+                  >
+                    <i class="ri-calendar-line text-orange-600"></i>
+                  </div>
+                  <span class="text-gray-700">2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- E-commerce Platform -->
+          <div
+            class="project-card bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=magento%2520e-commerce%2520mobile%2520app%2520interface%2520for%2520grocery%2520shopping%252C%2520showing%2520product%2520listings%252C%2520shopping%2520cart%252C%2520and%2520checkout%2520process%252C%2520clean%2520modern%2520design%252C%2520professional%2520UI%2520screenshot&width=800&height=400&seq=ecommerce01&orientation=landscape"
+                alt="E-commerce Platform"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Magento E-commerce Platform
+                  </h3>
+                  <p class="text-gray-600">KPS Mall</p>
+                </div>
+                <div
+                  class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  E-commerce
+                </div>
+              </div>
+              <p class="text-gray-700 mb-4">
+                Led the development and support of a Magento-based e-commerce
+                platform for grocery retail, including mobile apps, backend
+                systems, and integration with warehouse and logistics systems.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Magento</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Mobile App</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >WMS Integration</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >B2B/B2C</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-indigo-100"
+                  >
+                    <i class="ri-shopping-cart-line text-indigo-600"></i>
+                  </div>
+                  <span class="text-gray-700">Grocery Retail</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-indigo-100"
+                  >
+                    <i class="ri-calendar-line text-indigo-600"></i>
+                  </div>
+                  <span class="text-gray-700">2021-2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- POS Implementation -->
+          <div
+            class="project-card bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://readdy.ai/api/search-image?query=retail%2520store%2520with%2520modern%2520POS%2520system%2520being%2520used%2520by%2520cashier%252C%2520supermarket%2520checkout%2520counter%2520with%2520digital%2520display%2520showing%2520transaction%2520details%252C%2520professional%2520retail%2520environment%252C%2520high%2520quality%2520photo&width=800&height=400&seq=posimpl01&orientation=landscape"
+                alt="POS Implementation"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Nationwide POS Implementation
+                  </h3>
+                  <p class="text-gray-600">Central Retail Vietnam</p>
+                </div>
+                <div
+                  class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  Retail
+                </div>
+              </div>
+              <p class="text-gray-700 mb-4">
+                Led the implementation of a new POS system across 40+ retail
+                locations in multiple formats (grocery, sport & fashion,
+                playground), including user training and system configuration.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >POS</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Retail</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Training</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                  >Implementation</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100"
+                  >
+                    <i class="ri-store-2-line text-red-600"></i>
+                  </div>
+                  <span class="text-gray-700">40+ Locations</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100"
+                  >
+                    <i class="ri-calendar-line text-red-600"></i>
+                  </div>
+                  <span class="text-gray-700">2019-2021</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Project Highlights -->
+    <section id="projects" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Tools & Technologies
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            The technical toolkit I use to deliver effective solutions and
+            analyze business needs.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Databases -->
+          <div
+            class="tool-card bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div class="flex items-center justify-center mb-6">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100"
+              >
+                <i class="ri-database-2-line ri-2x text-blue-600"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">
+              Databases
+            </h3>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                >MySQL</span
+              >
+              <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                >SQLite</span
+              >
+              <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                >PL/SQL</span
+              >
+              <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                >SQL Server</span
+              >
+            </div>
+          </div>
+          <!-- API & Testing -->
+          <div
+            class="tool-card bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div class="flex items-center justify-center mb-6">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-green-100"
+              >
+                <i class="ri-code-box-line ri-2x text-green-600"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">
+              API & Testing
+            </h3>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full"
+                >Postman</span
+              >
+              <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full"
+                >UAT</span
+              >
+              <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full"
+                >Integration Testing</span
+              >
+              <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full"
+                >Test Planning</span
+              >
+            </div>
+          </div>
+          <!-- Design & Documentation -->
+          <div
+            class="tool-card bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div class="flex items-center justify-center mb-6">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-purple-100"
+              >
+                <i class="ri-layout-2-line ri-2x text-purple-600"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">
+              Design & Documentation
+            </h3>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full"
+                >Figma</span
+              >
+              <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full"
+                >Draw.io</span
+              >
+              <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full"
+                >Balsamiq</span
+              >
+              <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full"
+                >UX/UI Design</span
+              >
+            </div>
+          </div>
+          <!-- Project Management -->
+          <div
+            class="tool-card bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+          >
+            <div class="flex items-center justify-center mb-6">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-orange-100"
+              >
+                <i class="ri-git-branch-line ri-2x text-orange-600"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">
+              Project Management
+            </h3>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full"
+                >Gitlab</span
+              >
+              <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full"
+                >Issue Tracking</span
+              >
+              <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full"
+                >Backlog Management</span
+              >
+              <span class="bg-orange-50 text-orange-700 px-3 py-1 rounded-full"
+                >Requirements</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Platforms -->
+        <div
+          class="mt-12 bg-white p-8 rounded-lg shadow-sm border border-gray-100"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 mb-6">
+            Platforms & Systems
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- E-commerce -->
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-100 mr-4"
+              >
+                <i class="ri-shopping-bag-line text-indigo-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">E-commerce</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >Magento</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >Mobile Apps</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >B2B/B2C</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Retail -->
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 mr-4"
+              >
+                <i class="ri-store-2-line text-red-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Retail</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >POS</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >KiotViet</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >Loyalty</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Supply Chain -->
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-teal-100 mr-4"
+              >
+                <i class="ri-truck-line text-teal-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Supply Chain</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >WMS</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >TMS</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                    >Inventory</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Interested in working together? Feel free to reach out for
+            opportunities or just to say hello.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold text-gray-900 mb-6">
+              Send Me a Message
+            </h3>
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-2 border-none bg-white rounded shadow-sm text-gray-700 focus:ring-2 focus:ring-primary/20"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-2 border-none bg-white rounded shadow-sm text-gray-700 focus:ring-2 focus:ring-primary/20"
+                  placeholder="Your email"
+                />
+              </div>
+              <div>
+                <label
+                  for="subject"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="w-full px-4 py-2 border-none bg-white rounded shadow-sm text-gray-700 focus:ring-2 focus:ring-primary/20"
+                  placeholder="Subject"
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="w-full px-4 py-2 border-none bg-white rounded shadow-sm text-gray-700 focus:ring-2 focus:ring-primary/20"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <!-- Contact Information -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-6">
+              Contact Information
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4"
+                >
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Location</h4>
+                  <p class="text-gray-700">
+                    Phu Nhuan District, Ho Chi Minh City, Vietnam
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4"
+                >
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
+                  <p class="text-gray-700">hoanganhhuynh87@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4"
+                >
+                  <i class="ri-phone-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Phone</h4>
+                  <p class="text-gray-700">0777 717 991</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 mr-4"
+                >
+                  <i class="ri-linkedin-box-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">LinkedIn</h4>
+                  <a
+                    href="https://www.linkedin.com/in/huynhhoanganh/"
+                    target="_blank"
+                    class="text-primary hover:text-primary/80 transition-colors"
+                    >linkedin.com/in/huynhhoanganh</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Map -->
+            <div class="mt-8 rounded-lg overflow-hidden h-64 shadow-sm">
+              <div
+                class="w-full h-full bg-cover bg-center"
+                style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <div class="text-2xl font-['Pacifico'] text-white mb-2">
+              Huynh Hoang Anh
+            </div>
+            <p class="text-gray-400">IT Solution Consultant</p>
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="mailto:hoanganhhuynh87@gmail.com"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
+              >
+                <i class="ri-mail-line"></i>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/huynhhoanganh/"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
+              >
+                <i class="ri-linkedin-box-line"></i>
+              </div>
+            </a>
+            <a
+              href="tel:0777717991"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
+              >
+                <i class="ri-phone-line"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm"
+        >
+          <p>&copy; 2025 Huynh Hoang Anh. All rights reserved.</p>
+          <p class="mt-2">Last updated: June 7, 2025</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        mobileMenuLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      });
+    </script>
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80, // Offset for header
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+    <script id="contact-form-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+          // Basic validation
+          if (!name || !email || !message) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+          // Here you would normally send the form data to a server
+          // For this demo, we'll just show a success message
+          alert("Thank you for your message! I will get back to you soon.");
+          contactForm.reset();
+        });
+      });
+    </script>
+  </body>
+</html>
