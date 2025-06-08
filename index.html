@@ -106,7 +106,8 @@
       @media print {
         #mobile-menu-button,
         #mobile-menu,
-        #mobile-menu-script {
+        #mobile-menu-script,
+        #smooth-scroll-script {
           display: none !important;
         }
         body {
@@ -116,10 +117,16 @@
         header {
           position: static !important;
         }
-        section {
-          page-break-inside: avoid;
+        section, footer {
+           /* remove padding for print to avoid extra space */
+          padding-top: 0;
+          padding-bottom: 0;
         }
-        .no-print-break {
+        .section-print-wrapper {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        section, .no-print-break {
           page-break-inside: avoid;
         }
       }
@@ -188,82 +195,59 @@
         </div>
       </div>
     </header>
-    <section id="about" class="relative py-20 overflow-hidden">
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"
-      ></div>
-      <div
-        class="max-w-4xl mx-auto px-6 relative bg-gray-50"
-        style="
-          /* background-image: url('https://readdy.ai/api/search-image?query=abstract%2520professional%2520technology%2520background%2520with%2520blue%2520and%2520purple%2520gradient%2520elements%252C%2520subtle%2520geometric%2520patterns%252C%2520clean%2520minimalist%2520design%252C%2520suitable%2520for%2520IT%2520professional%2520website%252C%2520with%2520empty%2520space%2520on%2520left%2520side%2520for%2520text%2520content&width=1920&height=1080&seq=hero01&orientation=landscape'); */
-          background-size: cover;
-          background-position: center;
-        "
-      >
-        <div class="flex flex-col md:flex-row items-center w-full">
-          <div class="w-full md:w-2/3 mb-10 md:mb-0">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Huynh Hoang Anh
-            </h1>
-            <h2 class="text-xl md:text-2xl font-semibold text-primary mb-6">
-              IT Solution Consultant / IT Business Analyst / IT Business
-              Application Operation
-            </h2>
-            <p class="text-gray-700 mb-8 max-w-lg">
-              Experienced functional analyst and consultant with extensive
-              knowledge of various operational formats and sales platforms in
-              both offline retail and e-commerce. Passionate about bridging
-              business needs with technical solutions.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              <div class="flex items-center gap-2 text-gray-700">
-                <div
-                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-                >
-                  <i class="ri-map-pin-line ri-lg"></i>
+    
+    <section id="about" class="py-20">
+        <div class="max-w-4xl mx-auto relative overflow-hidden bg-gray-50 rounded-lg section-print-wrapper" style="background-size: cover; background-position: center right;">
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+            <div class="relative px-6">
+                <div class="flex flex-col md:flex-row items-center w-full">
+                    <div class="w-full md:w-2/3 mb-10 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                            Huynh Hoang Anh
+                        </h1>
+                        <h2 class="text-xl md:text-2xl font-semibold text-primary mb-6">
+                            IT Solution Consultant / IT Business Analyst / IT Business Application Operation
+                        </h2>
+                        <p class="text-gray-700 mb-8 max-w-lg">
+                            Experienced functional analyst and consultant with extensive
+                            knowledge of various operational formats and sales platforms in
+                            both offline retail and e-commerce. Passionate about bridging
+                            business needs with technical solutions.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center gap-2 text-gray-700">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+                                    <i class="ri-map-pin-line ri-lg"></i>
+                                </div>
+                                <span>Phu Nhuan, Ho Chi Minh</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-700">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+                                    <i class="ri-phone-line ri-lg"></i>
+                                </div>
+                                <span>0777 *** ***</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-700">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <a href="mailto:hoanganhhuynh87@gmail.com" class="hover:text-primary transition-colors">hoanganhhuynh87@gmail.com</a>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-700">
+                                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+                                    <i class="ri-linkedin-box-line ri-lg"></i>
+                                </div>
+                                <a href="https://www.linkedin.com/in/huynhhoanganh/" target="_blank" class="hover:text-primary transition-colors">linkedin.com/in/huynhhoanganh</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <span>Phu Nhuan, Ho Chi Minh</span>
-              </div>
-              <div class="flex items-center gap-2 text-gray-700">
-                <div
-                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-                >
-                  <i class="ri-phone-line ri-lg"></i>
-                </div>
-                <span>0777 *** ***</span>
-              </div>
-              <div class="flex items-center gap-2 text-gray-700">
-                <div
-                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-                >
-                  <i class="ri-mail-line ri-lg"></i>
-                </div>
-                <a
-                  href="mailto:hoanganhhuynh87@gmail.com"
-                  class="hover:text-primary transition-colors"
-                  >hoanganhhuynh87@gmail.com</a
-                >
-              </div>
-              <div class="flex items-center gap-2 text-gray-700">
-                <div
-                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-                >
-                  <i class="ri-linkedin-box-line ri-lg"></i>
-                </div>
-                <a
-                  href="https://www.linkedin.com/in/huynhhoanganh/"
-                  target="_blank"
-                  class="hover:text-primary transition-colors"
-                  >linkedin.com/in/huynhhoanganh</a
-                >
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
+
     <section id="skills" class="py-16">
-      <div class="max-w-4xl mx-auto px-6 bg-white py-12 rounded-lg">
+      <div class="max-w-4xl mx-auto px-6 bg-white py-12 rounded-lg section-print-wrapper">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-gray-900 mb-4">My Skills</h2>
         </div>
@@ -333,7 +317,7 @@
       </div>
     </section>
     <section id="tools" class="py-16">
-      <div class="max-w-4xl mx-auto px-6 bg-gray-50 py-12 rounded-lg">
+      <div class="max-w-4xl mx-auto px-6 bg-gray-50 py-12 rounded-lg section-print-wrapper">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-gray-900 mb-4">
             Tools & Technologies
@@ -457,8 +441,8 @@
         </div>
       </div>
     </section>
-    <section id="experience" class="py-20">
-      <div class="max-w-4xl mx-auto px-6 bg-white py-12 rounded-lg">
+    <section id="experience" class="py-16">
+      <div class="max-w-4xl mx-auto px-6 bg-white py-12 rounded-lg section-print-wrapper">
         <div class="text-center mb-16">
           <h2 class="text-3xl font-bold text-gray-900 mb-4">
             Professional Experience
@@ -991,8 +975,8 @@
         </div>
       </div>
     </section>
-    <section id="certifications" class="py-20">
-      <div class="max-w-4xl mx-auto px-6 bg-gray-50 py-12 rounded-lg">
+    <section id="certifications" class="py-16">
+      <div class="max-w-4xl mx-auto px-6 bg-gray-50 py-12 rounded-lg section-print-wrapper">
         <div class="text-center mb-16">
           <h2 class="text-3xl font-bold text-gray-900 mb-4">
             Learning and Certifications
@@ -1086,62 +1070,41 @@
         </div>
       </div>
     </section>
-    <footer class="bg-gray-900 text-white py-12">
-      <div class="max-w-4xl mx-auto px-6">
-        <div
-          class="flex flex-col md:flex-row justify-between items-center"
-        >
-          <div class="mb-6 md:mb-0">
-            <div class="text-2xl font-['Pacifico'] text-white mb-2">
-              Huynh Hoang Anh
+    
+    <footer class="py-12">
+        <div class="max-w-4xl mx-auto px-6 bg-gray-900 text-white rounded-lg section-print-wrapper">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <div class="text-2xl font-['Pacifico'] text-white mb-2">
+                        Huynh Hoang Anh
+                    </div>
+                    <p class="text-gray-400">IT Solution Consultant / IT Business Analyst / IT Business Application Operation</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="mailto:hoanganhhuynh87@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-mail-line"></i>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/huynhhoanganh/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-linkedin-box-line"></i>
+                        </div>
+                    </a>
+                    <a href="tel:0777717991" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700">
+                            <i class="ri-phone-line"></i>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <p class="text-gray-400">
-              IT Solution Consultant / IT Business Analyst / IT Business
-              Application Operation
-            </p>
-          </div>
-          <div class="flex space-x-6">
-            <a
-              href="mailto:hoanganhhuynh87@gmail.com"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <div
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
-              >
-                <i class="ri-mail-line"></i>
-              </div>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/huynhhoanganh/"
-              target="_blank"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <div
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
-              >
-                <i class="ri-linkedin-box-line"></i>
-              </div>
-            </a>
-            <a
-              href="tel:0777717991"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <div
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
-              >
-                <i class="ri-phone-line"></i>
-              </div>
-            </a>
-          </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Huynh Hoang Anh. All rights reserved.</p>
+                <p class="mt-2">Last updated: June 7, 2025</p>
+            </div>
         </div>
-        <div
-          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm"
-        >
-          <p>&copy; 2025 Huynh Hoang Anh. All rights reserved.</p>
-          <p class="mt-2">Last updated: June 7, 2025</p>
-        </div>
-      </div>
     </footer>
+
     <script id="mobile-menu-script">
       document.addEventListener("DOMContentLoaded", function () {
         const mobileMenuButton =
