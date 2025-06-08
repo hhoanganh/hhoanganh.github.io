@@ -1,1959 +1,977 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-  <head>
-
-    <meta charset="UTF-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Huynh Hoang Anh - IT Professional</title>
-
-    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
-
-    <script>
-
-      tailwind.config = {
-
-        theme: {
-
-          extend: {
-
-            colors: { primary: "#4f46e5", secondary: "#f97316" },
-
-            borderRadius: {
-
-              none: "0px",
-
-              sm: "4px",
-
-              DEFAULT: "8px",
-
-              md: "12px",
-
-              lg: "16px",
-
-              xl: "20px",
-
-              "2xl": "24px",
-
-              "3xl": "32px",
-
-              full: "9999px",
-
-              button: "8px",
-
-            },
-
-          },
-
-        },
-
-      };
-
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-
-      rel="stylesheet"
-
-    />
-
-    <link
-
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-
-      rel="stylesheet"
-
-    />
-
-    <link
-
-      rel="stylesheet"
-
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
-
-    />
-
-    <style>
-
-      body {
-
-      font-family: 'Inter', sans-serif;
-
-      scroll-behavior: smooth;
-
-      }
-
-      .timeline-item:not(:last-child)::after {
-
-      content: '';
-
-      position: absolute;
-
-      left: 1.5rem;
-
-      top: 3rem;
-
-      bottom: -2rem;
-
-      width: 2px;
-
-      background: #e5e7eb;
-
-      }
-
-      .timeline-dot {
-
-      position: absolute;
-
-      left: 1.5rem;
-
-      top: 1.5rem;
-
-      width: 1rem;
-
-      height: 1rem;
-
-      border-radius: 50%;
-
-      background: #4f46e5;
-
-      transform: translateX(-50%);
-
-      z-index: 10;
-
-      }
-
-      .skill-hexagon {
-
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-
-      transition: all 0.3s ease;
-
-      }
-
-      .skill-hexagon:hover {
-
-      transform: translateY(-5px);
-
-      }
-
-      .project-card {
-
-      transition: all 0.3s ease;
-
-      }
-
-      .project-card:hover {
-
-      transform: translateY(-5px);
-
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-      }
-
-      .tool-card {
-
-      transition: all 0.3s ease;
-
-      }
-
-      .tool-card:hover {
-
-      transform: scale(1.05);
-
-      }
-
-      input:focus, textarea:focus {
-
-      outline: none;
-
-      border-color: #4f46e5;
-
-      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
-
-      }
-
-    </style>
-
-  </head>
-
-  <body class="bg-gray-50">
-
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
-
-      <div
-
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-
-      >
-
-        <div class="text-2xl font-['Pacifico'] text-primary">HHA</div>
-
-        <nav class="hidden md:flex space-x-8">
-
-          <a
-
-            href="#about"
-
-            class="text-gray-700 hover:text-primary font-medium transition-colors"
-
-            >About</a
-
-          >
-
-          <a
-
-            href="#skills"
-
-            class="text-gray-700 hover:text-primary font-medium transition-colors"
-
-            >Skills</a
-
-          >
-
-          <a
-
-            href="#experience"
-
-            class="text-gray-700 hover:text-primary font-medium transition-colors"
-
-            >Experience</a
-
-          >
-
-          <a
-
-            href="#certifications"
-
-            class="text-gray-700 hover:text-primary font-medium transition-colors"
-
-            >Certifications</a
-
-          >
-
-        </nav>
-
-        <button
-
-          id="mobile-menu-button"
-
-          class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-700"
-
-        >
-
-          <i class="ri-menu-line ri-lg"></i>
-
-        </button>
-
-      </div>
-
-      <div
-
-        id="mobile-menu"
-
-        class="hidden md:hidden bg-white shadow-lg absolute w-full"
-
-      >
-
-        <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
-
-          <a
-
-            href="#about"
-
-            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
-
-            >About</a
-
-          >
-
-          <a
-
-            href="#skills"
-
-            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
-
-            >Skills</a
-
-          >
-
-          <a
-
-            href="#experience"
-
-            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
-
-            >Experience</a
-
-          >
-
-          <a
-
-            href="#certifications"
-
-            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
-
-            >Certifications</a
-
-          >
-
-        </div>
-
-      </div>
-
-    </header>
-
-    <section
-
-  id="about"
-
-  class="relative py-20 overflow-hidden"
-
-  style="background-image: url('https://readdy.ai/api/search-image?query=abstract%2520professional%2520technology%2520background%2520with%2520blue%2520and%2520purple%2520gradient%2520elements%252C%2520subtle%2520geometric%2520patterns%252C%2520clean%2520minimalist%2520design%252C%2520suitable%2520for%2520IT%2520professional%2520website%252C%2520with%2520empty%2520space%2520on%2520left%2520side%2520for%2520text%2520content&width=1920&height=1080&seq=hero01&orientation=landscape'); background-size: cover; background-position: center right;"
-
->
-
-  <div
-
-    class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"
-
-  ></div>
-
-  <div class="container mx-auto px-6 relative">
-
-    <div class="max-w-4xl mx-auto">
-
-      <div class="flex flex-col md:flex-row items-center w-full">
-
-        <div class="w-full md:w-1/2 mb-10 md:mb-0">
-
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-
-            Huynh Hoang Anh
-
-          </h1>
-
-          <h2 class="text-xl md:text-2xl font-semibold text-primary mb-6">
-
-            IT Solution Consultant / IT Business Analyst / IT Business Application Operation
-
-          </h2>
-
-          <p class="text-gray-700 mb-8 max-w-lg">
-
-            Experienced functional analyst and consultant with extensive
-
-            knowledge of various operational formats and sales platforms in
-
-            both offline retail and e-commerce. Passionate about bridging
-
-            business needs with technical solutions.
-
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-
-            <div class="flex items-center gap-2 text-gray-700">
-
-              <div
-
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-
-              >
-
-                <i class="ri-map-pin-line ri-lg"></i>
-
-              </div>
-
-              <span>Phu Nhuan, Ho Chi Minh</span>
-
-            </div>
-
-            <div class="flex items-center gap-2 text-gray-700">
-
-              <div
-
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-
-              >
-
-                <i class="ri-phone-line ri-lg"></i>
-
-              </div>
-
-              <span>0777 *** ***</span>
-
-            </div>
-
-             <div class="flex items-center gap-2 text-gray-700">
-
-              <div
-
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-
-              >
-
-                <i class="ri-mail-line ri-lg"></i>
-
-              </div>
-
-              <a href="mailto:hoanganhhuynh87@gmail.com" class="hover:text-primary transition-colors">hoanganhhuynh87@gmail.com</a>
-
-            </div>
-
-            <div class="flex items-center gap-2 text-gray-700">
-
-              <div
-
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-
-              >
-
-                <i class="ri-linkedin-box-line ri-lg"></i>
-
-              </div>
-
-              <a href="https://www.linkedin.com/in/huynhhoanganh/" target="_blank" class="hover:text-primary transition-colors">linkedin.com/in/huynhhoanganh</a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="w-full md:w-1/2 flex justify-center md:justify-end">
-
-          <div
-
-            class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl"
-
-          >
-
-            <img
-
-              src="https://readdy.ai/api/search-image?query=professional%2520portrait%2520of%2520Asian%2520male%2520IT%2520consultant%252C%2520business%2520casual%2520attire%252C%2520confident%2520expression%252C%2520neutral%2520background%252C%2520high%2520quality%2520professional%2520headshot%252C%2520studio%2520lighting%252C%2520sharp%2520focus&width=800&height=800&seq=profile01&orientation=squarish"
-
-              alt="Huynh Hoang Anh"
-
-              class="w-full h-full object-cover object-top"
-
-            />
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    </div>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Huynh Hoang Anh - IT Professional</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#f97316" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      }
+      .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      top: 3rem;
+      bottom: -2rem;
+      width: 2px;
+      background: #e5e7eb;
+      }
+      .timeline-dot {
+      position: absolute;
+      left: 1.5rem;
+      top: 1.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: #4f46e5;
+      transform: translateX(-50%);
+      z-index: 10;
+      }
+      .skill-hexagon {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: all 0.3s ease;
+      }
+      .skill-hexagon:hover {
+      transform: translateY(-5px);
+      }
+      .project-card {
+      transition: all 0.3s ease;
+      }
+      .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .tool-card {
+      transition: all 0.3s ease;
+      }
+      .tool-card:hover {
+      transform: scale(1.05);
+      }
+      input:focus, textarea:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-['Pacifico'] text-primary">HHA</div>
+        <nav class="hidden md:flex space-x-8">
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Experience</a
+          >
+          <a
+            href="#certifications"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Certifications</a
+          >
+        </nav>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-700"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white shadow-lg absolute w-full"
+      >
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >Experience</a
+          >
+          <a
+            href="#certifications"
+            class="text-gray-700 hover:text-primary font-medium transition-colors py-2"
+            >Certifications</a
+          >
+        </div>
+      </div>
+    </header>
+    <section
+      id="about"
+      class="relative py-20 overflow-hidden"
+      style="background-image: url('https://readdy.ai/api/search-image?query=abstract%2520professional%2520technology%2520background%2520with%2520blue%2520and%2520purple%2520gradient%2520elements%252C%2520subtle%2520geometric%2520patterns%252C%2520clean%2520minimalist%2520design%252C%2520suitable%2520for%2520IT%2520professional%2520website%252C%2520with%2520empty%2520space%2520on%2520left%2520side%2520for%2520text%2520content&width=1920&height=1080&seq=hero01&orientation=landscape'); background-size: cover; background-position: center right;"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"
+      ></div>
+      <div class="container mx-auto px-6 relative">
+        <div class="flex flex-col md:flex-row items-center w-full">
+          <div class="w-full md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Huynh Hoang Anh
+            </h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-primary mb-6">
+              IT Solution Consultant / IT Business Analyst / IT Business Application Operation
+            </h2>
+            <p class="text-gray-700 mb-8 max-w-lg">
+              Experienced functional analyst and consultant with extensive
+              knowledge of various operational formats and sales platforms in
+              both offline retail and e-commerce. Passionate about bridging
+              business needs with technical solutions.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div class="flex items-center gap-2 text-gray-700">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
+                >
+                  <i class="ri-map-pin-line ri-lg"></i>
+                </div>
+                <span>Phu Nhuan, Ho Chi Minh</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
+                >
+                  <i class="ri-phone-line ri-lg"></i>
+                </div>
+                <span>0777 *** ***</span>
+              </div>
+               <div class="flex items-center gap-2 text-gray-700">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
+                >
+                  <i class="ri-mail-line ri-lg"></i>
+                </div>
+                <a href="mailto:hoanganhhuynh87@gmail.com" class="hover:text-primary transition-colors">hoanganhhuynh87@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-2 text-gray-700">
+                <div
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
+                >
+                  <i class="ri-linkedin-box-line ri-lg"></i>
+                </div>
+                <a href="https://www.linkedin.com/in/huynhhoanganh/" target="_blank" class="hover:text-primary transition-colors">linkedin.com/in/huynhhoanganh</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+            <div
+              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl"
+            >
+              <img
+                src="https://readdy.ai/api/search-image?query=professional%2520portrait%2520of%2520Asian%2520male%2520IT%2520consultant%252C%2520business%2520casual%2520attire%252C%2520confident%2520expression%252C%2520neutral%2520background%252C%2520high%2520quality%2520professional%2520headshot%252C%2520studio%2520lighting%252C%2520sharp%2520focus&width=800&height=800&seq=profile01&orientation=squarish"
+                alt="Huynh Hoang Anh"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">My Skills</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="bg-gradient-to-br from-purple-500/10 to-purple-500/20 p-6 rounded-lg text-left"
+          >
+            <div class="flex items-center mb-3">
+               <div
+                  class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-purple-500/20 mr-4"
+               >
+                 <i class="ri-store-2-line ri-lg text-purple-500"></i>
+               </div>
+               <h3 class="text-lg font-semibold text-gray-900">
+                  Retail & E-Commerce
+               </h3>
+            </div>
+            <ul class="text-gray-700 text-sm space-y-2 list-disc list-inside">
+              <li>POS Systems</li>
+              <li>Magento (Adobe Commerce)</li>
+              <li>Loyalty Programs</li>
+              <li>Warehouse Management System (WMS)</li>
+            </ul>
+          </div>
+          <div
+            class="bg-gradient-to-br from-primary/10 to-primary/20 p-6 rounded-lg text-left"
+          >
+             <div class="flex items-center mb-3">
+                <div
+                   class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mr-4"
+                >
+                  <i class="ri-line-chart-line ri-lg text-primary"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Business Analysis
+                </h3>
+             </div>
+            <ul class="text-gray-700 text-sm space-y-2 list-disc list-inside">
+              <li>Requirements Analysis</li>
+              <li>Gap Analysis</li>
+              <li>Process Mapping</li>
+              <li>Documentation</li>
+            </ul>
+          </div>
+          <div
+            class="bg-gradient-to-br from-orange-500/10 to-orange-500/20 p-6 rounded-lg text-left"
+          >
+             <div class="flex items-center mb-3">
+                <div
+                   class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-orange-500/20 mr-4"
+                >
+                  <i class="ri-task-line ri-lg text-orange-500"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Project Management & Consulting
+                </h3>
+             </div>
+            <ul class="text-gray-700 text-sm space-y-2 list-disc list-inside">
+              <li>Solution Consulting & Evaluation</li>
+              <li>Vendor Management</li>
+              <li>Risk Assessment</li>
+              <li>Resource Planning</li>
+              <li>Implementation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="tools" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Tools & Technologies
+          </h2>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-blue-100 mr-3"
+              >
+                <i class="ri-database-2-line text-blue-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1 text-base">DBMS</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs"
+                    >MySQL</span
+                  >
+                  <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs"
+                    >PL/SQL</span
+                  >
+                  <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs"
+                    >SQL Server</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-green-100 mr-3"
+              >
+                <i class="ri-code-box-line text-green-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1 text-base">API</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span
+                    class="bg-green-50 text-green-700 px-2 py-0.5 rounded-full text-xs"
+                    >Postman</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-purple-100 mr-3"
+              >
+                <i class="ri-layout-2-line text-purple-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1 text-base">Wireframe</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span
+                    class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full text-xs"
+                    >Figma</span
+                  >
+                  <span
+                    class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full text-xs"
+                    >Draw.io</span
+                  >
+                  <span
+                    class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full text-xs"
+                    >Balsamiq</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-orange-100 mr-3"
+              >
+                <i class="ri-git-branch-line text-orange-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1 text-base">
+                  Management
+                </h4>
+                <div class="flex flex-wrap gap-1">
+                  <span
+                    class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-xs"
+                    >Gitlab</span
+                  >
+                  <span
+                    class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-xs"
+                    >Jira</span
+                  >
+                </div>
+              </div>
+            </div>
+             <div class="flex items-start">
+              <div
+                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-red-100 mr-3"
+              >
+                <i class="ri-apps-2-line text-red-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1 text-base">No-Code</h4>
+                <div class="flex flex-wrap gap-1">
+                  <span
+                    class="bg-red-50 text-red-700 px-2 py-0.5 rounded-full text-xs"
+                    >Google AppSheet</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="experience" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Professional Experience
+          </h2>
+        </div>
+        <div class="relative max-w-4xl mx-auto">
+          <div class="timeline-item relative pl-12 pb-16">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Business Analyst
+                  </h3>
+                  <p class="text-primary font-medium">Freelance</p>
+                </div>
+                <div class="mt-2 md:mt-0 text-gray-600">
+                  January 2025 - April - 2025
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 mr-3"
+                    >
+                      <i class="ri-book-open-line text-blue-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Learning Management System
+                      </h4>
+                      <p class="text-sm text-gray-600">University Project</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700">
+                    <p>
+                      Developed Use Case Documentation and executed User Acceptance Testing.
+                    </p>
+                    <div class="flex items-center gap-2 text-sm">
+                      <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded"
+                        >Use Case Documentation</span
+                      >
+                      <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded"
+                        >UAT</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 mr-3"
+                    >
+                      <i class="ri-recycle-line text-green-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Waste Treatment Management
+                      </h4>
+                      <p class="text-sm text-gray-600">Environmental Project</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700">
+                    <p>
+                      Analyzed solution requirements to estimate budget and resource
+                      needs for project bidding.
+                    </p>
+                    <div class="flex items-center gap-2 text-sm">
+                      <span
+                        class="bg-green-100 text-green-800 px-2 py-1 rounded"
+                        >Requirements Analysis</span
+                      >
+                      <span
+                        class="bg-green-100 text-green-800 px-2 py-1 rounded"
+                        >Budget Estimation</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item relative pl-12 pb-16">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    IT Customer Solution Consultant
+                  </h3>
+                  <p class="text-primary font-medium">Aden Vietnam</p>
+                </div>
+                <div class="mt-2 md:mt-0 text-gray-600">
+                  January 2024 - June 2024 (6-month contract)
+                </div>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Aden is a leading international group in the field of Integrated
+                Facility Management solutions.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-100 mr-3"
+                    >
+                      <i class="ri-restaurant-line text-orange-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Factory Food Court Solution
+                      </h4>
+                      <p class="text-sm text-gray-600">POS & Mobile App</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700">
+                    <div class="flex flex-wrap gap-2 mb-2">
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >9 Brands</span
+                      >
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >3,000 Users</span
+                      >
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >2,500 Transactions/Day</span
+                      >
+                    </div>
+                    <p class="text-sm">
+                        Identified client’s goals, business and functional requirements.<br>
+                        Conducted gap analysis and risk assessment.<br>
+                        Evaluated solution vendors in the market.<br>
+                        Collaborated with vendors to develop solution proposals, solution functional design & UX/UI design.<br>
+                        Reviewed proposals, contracts with client and selected the best option.<br>
+                        Documented the process with: solution assessment, business requirements document (BRD), project timeline (WBS), risk assessment, request for proposal (RFP).<br>
+                        <em>* Project discontinued after the bidding process.</em>
+                    </p>
+                    <div class="flex items-center gap-2 text-sm pt-2">
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded"
+                          >Solution Analysis</span
+                        >
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded"
+                          >Vendor Evaluation</span
+                        >
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded"
+                          >Project Management</span
+                        >
+                     </div>
+                  </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-purple-100 mr-3"
+                    >
+                      <i class="ri-calendar-check-line text-purple-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Factory Canteen Meal Booking
+                      </h4>
+                      <p class="text-sm text-gray-600">In-house Development</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700">
+                    <div class="flex flex-wrap gap-2 mb-2">
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >1,500 Users</span
+                      >
+                      <span
+                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
+                        >2,500 Transactions/Day</span
+                      >
+                    </div>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                      <li>Analyzed business and functional requirements</li>
+                      <li>Procured necessary equipments</li>
+                      <li>Conducted UAT and managed go-live process</li>
+                      <li>Provided post-implementation support</li>
+                    </ul>
+                     <div class="flex items-center gap-2 text-sm pt-2">
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded"
+                          >Requirement Analysis</span
+                        >
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded"
+                          >UAT</span
+                        >
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded"
+                          >Implementation</span
+                        >
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item relative pl-12 pb-16">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Business Applications Support Lead
+                  </h3>
+                  <p class="text-primary font-medium">KPS Mall</p>
+                </div>
+                <div class="mt-2 md:mt-0 text-gray-600">
+                  December 2021 - February 2023 (1 year 3 months)
+                </div>
+              </div>
+              <p class="text-gray-700 mb-6">
+                KPS Mall is a B2C and B2B e-commerce grocery startup.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100 mr-3"
+                    >
+                      <i class="ri-shopping-cart-line text-indigo-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Magento-based E-commerce Platform
+                      </h4>
+                      <p class="text-sm text-gray-600">Mobile App & Backend</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700 text-sm">
+                    <p>
+                      Led the development and support of Magento-based
+                      e-commerce platform, including mobile apps and backend
+                      systems.
+                    </p>
+                    <div class="mt-2">
+                      <img
+                        src="https://readdy.ai/api/search-image?query=professional%2520screenshot%2520of%2520Magento%2520e-commerce%2520dashboard%2520interface%2520with%2520grocery%2520products%252C%2520clean%2520design%252C%2520showing%2520analytics%2520and%2520product%2520management%2520sections%252C%2520neutral%2520colors%252C%2520high%2520quality%2520UI&width=600&height=400&seq=magento01&orientation=landscape"
+                        alt="Magento Dashboard"
+                        class="w-full h-auto rounded-lg shadow-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 mr-3"
+                    >
+                      <i class="ri-link-m text-teal-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        System Integration Projects
+                      </h4>
+                      <p class="text-sm text-gray-600">
+                        WMS, TMS, B2B Platform
+                      </p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700 text-sm">
+                    <ul class="list-disc list-inside space-y-1">
+                      <li>Analyzed business processes & requirements</li>
+                      <li>Managed requirement & incident backlog (Gitlab)</li>
+                      <li>Conducted UAT and go-live testing</li>
+                      <li>Updated application mockups/wireframes (Figma)</li>
+                      <li>Led hiring process and team development</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >Magento</span
+                      >
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >WMS</span
+                      >
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >TMS</span
+                      >
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >KiotViet</span
+                      >
+                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
+                        >B2B Platform</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item relative pl-12 pb-16">
+            <div class="timeline-dot"></div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900">
+                    Front Office Applications Specialist
+                  </h3>
+                  <p class="text-primary font-medium">Central Retail Vietnam</p>
+                </div>
+                <div class="mt-2 md:mt-0 text-gray-600">
+                  May 2019 - December 2021 (2 years 8 months)
+                </div>
+              </div>
+              <p class="text-gray-700 mb-6">
+                Central Retail is one of the largest multi-format foreign
+                retailers in Vietnam with over 40 stores across multiple formats
+                including grocery, sport & fashion, and playground.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-red-100 mr-3"
+                    >
+                      <i class="ri-terminal-box-line text-red-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        Nationwide POS System Replacement
+                      </h4>
+                      <p class="text-sm text-gray-600">40+ Retail Locations</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700 text-sm">
+                    <p>
+                      In the development and implemenation team of a new POS system across all
+                      retail locations.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 mt-2">
+                      <li>Conducted requirement analysis, data mapping and UAT</li>
+                      <li>Provided business user training</li>
+                      <li>Managed system configuration, setup and implementation across stores</li>
+                    </ul>
+                    <div class="flex items-center gap-2 text-sm pt-2">
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded"
+                          >POS Implementation</span
+                        >
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded"
+                          >Requirement Analysis</span
+                        >
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded"
+                          >UAT</span
+                        >
+                     </div>
+                  </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg">
+                  <div class="flex items-start mb-4">
+                    <div
+                      class="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 mr-3"
+                    >
+                      <i class="ri-code-box-line text-yellow-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-gray-900">
+                        In-house Applications Operation & Development
+                      </h4>
+                      <p class="text-sm text-gray-600">
+                        Sales & Loyalty Systems
+                      </p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-gray-700 text-sm">
+                    <ul class="list-disc list-inside space-y-1">
+                      <li>Operated nationwide offline POS sales & Promotion/Loyalty systems</li>
+                      <li>Collaborated with IT, business teams on in-house applications development</li>
+                      <li>Collaborated with third-party vendors on system integrations</li>
+                    </ul>
+                     <div class="flex items-center gap-2 text-sm pt-2">
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded"
+                          >System Operation</span
+                        >
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded"
+                          >Loyalty Programs</span
+                        >
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded"
+                          >System Integration</span
+                        >
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item relative pl-12">
+             <div class="timeline-dot"></div>
+             <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+                >
+                <div
+                   class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+                   >
+                   <div>
+                      <h3 class="text-xl font-semibold text-gray-900">
+                         Retail POS Support
+                      </h3>
+                      <p class="text-primary font-medium">BlueBytez POS Solution</p>
+                   </div>
+                   <div class="mt-2 md:mt-0 text-gray-600">
+                      11/2013 – 03/2019 (5 years 5 months)
+                   </div>
+                </div>
+                <p class="text-gray-700 mb-6">
+                  BlueBytez develops retail POS solutions.
+                </p>
+                <div class="space-y-2 text-gray-700 text-sm">
+                   <ul class="list-disc list-inside space-y-1">
+                      <li>Provided support to F&B chains and retail stores using BlueBytez POS System.</li>
+                      <li>Consulted with customers to develop retail POS features.</li>
+                      <li>Set up and troubleshooted IT equipment (PC, printer, router, wireless AP).</li>
+                      <li>Conducted user training and composed user guides and manuals.</li>
+                   </ul>
+                   <div class="flex items-center gap-2 text-sm pt-2">
+                        <span class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded"
+                          >POS Support</span
+                        >
+                        <span class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded"
+                          >IT Hardware Support</span
+                        >
+                         <span class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded"
+                          >User Training</span
+                        >
+                     </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="certifications" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        Learning and Certifications
+      </h2>
+    </div>
+    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 max-w-4xl mx-auto">
+      <ul class="list-disc list-inside space-y-3 text-gray-700">
+        <li>Develop no-code apps by Google AppSheet.</li>
+        <li>Produce some business analysis deliverables (BRD, Use Case, User Story, Wireframe, Prototype): School Lunch Ordering System at <a href="https://github.com/hhoanganh/slos" target="_blank" class="text-primary hover:underline">https://github.com/hhoanganh/slos</a></li>
+      </ul>
+      <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Online courses:</h4>
+      <ul class="list-disc list-inside space-y-3 text-gray-700">
+         <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/JYXBPDBXARTK" target="_blank" class="text-primary hover:underline">Software Product Management – Coursera</a></li>
+         <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FQTP9K8T2N4Q" target="_blank" class="text-primary hover:underline">Project Management: Specialization – Google</a></li>
+         <li><a href="https://www.coursera.org/account/accomplishments/verify/QLAHRRMMV4G7" target="_blank" class="text-primary hover:underline">Foundations of User Experience (UX) Design – Google</a></li>
+         <li><a href="https://www.linkedin.com/learning/certificates/a16ce1cf4e94bca97696a10c3c2196bb3b96be447111fb480f1efb474209b088" target="_blank" class="text-primary hover:underline">Business Analysis Foundations – LinkedIn</a></li>
+         <li><a href="https://www.coursera.org/account/accomplishments/specialization/MU5EN2W3NR9K" target="_blank" class="text-primary hover:underline">Omnichannel Retail Strategy – Coursera</a></li>
+         <li><a href="https://www.coursera.org/account/accomplishments/verify/L3FU93UQCWBZ" target="_blank" class="text-primary hover:underline">Supply Chain Management for E-commerce – Coursera</a></li>
+         <li><a href="https://www.coursera.org/account/accomplishments/specialization/WEZ1AGNTF21H" target="_blank" class="text-primary hover:underline">Digital Marketing & E-commerce – Google</a></li>
+         <li><a href="https://www.coursera.org/account/accomplishments/specialization/MBTRGPYLPAFX" target="_blank" class="text-primary hover:underline">Building No-Code Apps with AppSheet - Google</a></li>
+      </ul>
+    </div>
+  </div>
 </section>
-
-    <section id="skills" class="py-16 bg-white">
-
-      <div class="container mx-auto px-6">
-
-        <div class="text-center mb-12">
-
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">My Skills</h2>
-
-        </div>
-
-        <div class="max-w-4xl mx-auto">
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div
-
-              class="bg-gradient-to-br from-purple-500/10 to-purple-500/20 p-6 rounded-lg text-left"
-
-            >
-
-              <div class="flex items-center mb-3">
-
-                 <div
-
-                  class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-purple-500/20 mr-4"
-
-                >
-
-                  <i class="ri-store-2-line ri-lg text-purple-500"></i>
-
-                </div>
-
-                <h3 class="text-lg font-semibold text-gray-900">
-
-                  Retail & E-Commerce
-
-                </h3>
-
-              </div>
-
-              <ul class="text-gray-700 text-sm space-y-2 list-disc list-inside">
-
-                <li>POS Systems</li>
-
-                <li>Magento (Adobe Commerce)</li>
-
-                <li>Loyalty Programs</li>
-
-                <li>Warehouse Management System (WMS)</li>
-
-              </ul>
-
-            </div>
-
-            <div
-
-              class="bg-gradient-to-br from-primary/10 to-primary/20 p-6 rounded-lg text-left"
-
-            >
-
-               <div class="flex items-center mb-3">
-
-                 <div
-
-                    class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mr-4"
-
-                  >
-
-                  <i class="ri-line-chart-line ri-lg text-primary"></i>
-
-                </div>
-
-                <h3 class="text-lg font-semibold text-gray-900">
-
-                  Business Analysis
-
-                </h3>
-
-              </div>
-
-              <ul class="text-gray-700 text-sm space-y-2 list-disc list-inside">
-
-                <li>Requirements Analysis</li>
-
-                <li>Gap Analysis</li>
-
-                <li>Process Mapping</li>
-
-                <li>Documentation</li>
-
-              </ul>
-
-            </div>
-
-            <div
-
-              class="bg-gradient-to-br from-orange-500/10 to-orange-500/20 p-6 rounded-lg text-left"
-
-            >
-
-               <div class="flex items-center mb-3">
-
-                 <div
-
-                    class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-orange-500/20 mr-4"
-
-                  >
-
-                  <i class="ri-task-line ri-lg text-orange-500"></i>
-
-                </div>
-
-                <h3 class="text-lg font-semibold text-gray-900">
-
-                  Project Management & Consulting
-
-                </h3>
-
-              </div>
-
-              <ul class="text-gray-700 text-sm space-y-2 list-disc list-inside">
-
-                <li>Solution Consulting & Evaluation</li>
-
-                <li>Vendor Management</li>
-
-                <li>Risk Assessment</li>
-
-                <li>Resource Planning</li>
-
-                <li>Implementation</li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        </div>
-
-    </section>
-
-    <section id="tools" class="py-16 bg-gray-50">
-
-      <div class="container mx-auto px-6">
-
-        <div class="text-center mb-12">
-
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
-
-            Tools & Technologies
-
-          </h2>
-
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 max-w-4xl mx-auto">
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-
-            <div class="flex items-start">
-
-              <div
-
-                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-blue-100 mr-3"
-
-              >
-
-                <i class="ri-database-2-line text-blue-600"></i>
-
-              </div>
-
-              <div>
-
-                <h4 class="font-semibold text-gray-900 mb-1 text-base">DBMS</h4>
-
-                <div class="flex flex-wrap gap-1">
-
-                  <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >MySQL</span
-
-                  >
-
-                  <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >PL/SQL</span
-
-                  >
-
-                  <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >SQL Server</span
-
-                  >
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="flex items-start">
-
-              <div
-
-                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-green-100 mr-3"
-
-              >
-
-                <i class="ri-code-box-line text-green-600"></i>
-
-              </div>
-
-              <div>
-
-                <h4 class="font-semibold text-gray-900 mb-1 text-base">API</h4>
-
-                <div class="flex flex-wrap gap-1">
-
-                  <span
-
-                    class="bg-green-50 text-green-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >Postman</span
-
-                  >
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="flex items-start">
-
-              <div
-
-                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-purple-100 mr-3"
-
-              >
-
-                <i class="ri-layout-2-line text-purple-600"></i>
-
-              </div>
-
-              <div>
-
-                <h4 class="font-semibold text-gray-900 mb-1 text-base">Wireframe</h4>
-
-                <div class="flex flex-wrap gap-1">
-
-                  <span
-
-                    class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >Figma</span
-
-                  >
-
-                  <span
-
-                    class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >Draw.io</span
-
-                  >
-
-                  <span
-
-                    class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >Balsamiq</span
-
-                  >
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="flex items-start">
-
-              <div
-
-                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-orange-100 mr-3"
-
-              >
-
-                <i class="ri-git-branch-line text-orange-600"></i>
-
-              </div>
-
-              <div>
-
-                <h4 class="font-semibold text-gray-900 mb-1 text-base">
-
-                  Management
-
-                </h4>
-
-                <div class="flex flex-wrap gap-1">
-
-                  <span
-
-                    class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >Gitlab</span
-
-                  >
-
-                  <span
-
-                    class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >Jira</span
-
-                  >
-
-                </div>
-
-              </div>
-
-            </div>
-
-             <div class="flex items-start">
-
-              <div
-
-                class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-red-100 mr-3"
-
-              >
-
-                <i class="ri-apps-2-line text-red-600"></i>
-
-              </div>
-
-              <div>
-
-                <h4 class="font-semibold text-gray-900 mb-1 text-base">No-Code</h4>
-
-                <div class="flex flex-wrap gap-1">
-
-                  <span
-
-                    class="bg-red-50 text-red-700 px-2 py-0.5 rounded-full text-xs"
-
-                    >Google AppSheet</span
-
-                  >
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section id="experience" class="py-20 bg-white">
-
-      <div class="container mx-auto px-6">
-
-        <div class="text-center mb-16">
-
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
-
-            Professional Experience
-
-          </h2>
-
-        </div>
-
-        <div class="relative max-w-4xl mx-auto">
-
-          <div class="timeline-item relative pl-12 pb-16">
-
-            <div class="timeline-dot"></div>
-
-            <div
-
-              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
-
-            >
-
-              <div
-
-                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
-
-              >
-
-                <div>
-
-                  <h3 class="text-xl font-semibold text-gray-900">
-
-                    Business Analyst
-
-                  </h3>
-
-                  <p class="text-primary font-medium">Freelance</p>
-
-                </div>
-
-                <div class="mt-2 md:mt-0 text-gray-600">
-
-                  January 2025 - April 2025
-
-                </div>
-
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-
-                <div class="bg-gray-50 p-5 rounded-lg">
-
-                  <div class="flex items-start mb-4">
-
-                    <div
-
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 mr-3"
-
-                    >
-
-                      <i class="ri-book-open-line text-blue-600"></i>
-
-                    </div>
-
-                    <div>
-
-                      <h4 class="font-semibold text-gray-900">
-
-                        Learning Management System
-
-                      </h4>
-
-                      <p class="text-sm text-gray-600">University Project</p>
-
-                    </div>
-
-                  </div>
-
-                  <div class="space-y-2 text-gray-700">
-
-                    <p>
-
-                      Developed Use Case Documentation and executed User Acceptance Testing.
-
-                    </p>
-
-                    <div class="flex items-center gap-2 text-sm">
-
-                      <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded"
-
-                        >Use Case Documentation</span
-
-                      >
-
-                      <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded"
-
-                        >UAT</span
-
-                      >
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="bg-gray-50 p-5 rounded-lg">
-
-                  <div class="flex items-start mb-4">
-
-                    <div
-
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 mr-3"
-
-                    >
-
-                      <i class="ri-recycle-line text-green-600"></i>
-
-                    </div>
-
-                    <div>
-
-                      <h4 class="font-semibold text-gray-900">
-
-                        Waste Treatment Management
-
-                      </h4>
-
-                      <p class="text-sm text-gray-600">Environmental Project</p>
-
-                    </div>
-
-                  </div>
-
-                  <div class="space-y-2 text-gray-700">
-
-                    <p>
-
-                      Analyzed solution requirements to estimate budget and resource
-
-                      needs for project bidding.
-
-                    </p>
-
-                    <div class="flex items-center gap-2 text-sm">
-
-                      <span
-
-                        class="bg-green-100 text-green-800 px-2 py-1 rounded"
-
-                        >Requirements Analysis</span
-
-                      >
-
-                      <span
-
-                        class="bg-green-100 text-green-800 px-2 py-1 rounded"
-
-                        >Budget Estimation</span
-
-                      >
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="timeline-item relative pl-12 pb-16">
-
-            <div class="timeline-dot"></div>
-
-            <div
-
-              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
-
-            >
-
-              <div
-
-                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
-
-              >
-
-                <div>
-
-                  <h3 class="text-xl font-semibold text-gray-900">
-
-                    IT Customer Solution Consultant
-
-                  </h3>
-
-                  <p class="text-primary font-medium">Aden Vietnam</p>
-
-                </div>
-
-                <div class="mt-2 md:mt-0 text-gray-600">
-
-                  January 2024 - June 2024 (6-month contract)
-
-                </div>
-
-              </div>
-
-              <p class="text-gray-700 mb-6">
-
-                Aden is a leading international group in the field of Integrated
-
-                Facility Management solutions.
-
-              </p>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-
-                <div class="bg-gray-50 p-5 rounded-lg">
-
-                  <div class="flex items-start mb-4">
-
-                    <div
-
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-100 mr-3"
-
-                    >
-
-                      <i class="ri-restaurant-line text-orange-600"></i>
-
-                    </div>
-
-                    <div>
-
-                      <h4 class="font-semibold text-gray-900">
-
-                        Factory Food Court Solution
-
-                      </h4>
-
-                      <p class="text-sm text-gray-600">POS & Mobile App</p>
-
-                    </div>
-
-                  </div>
-
-                  <div class="space-y-2 text-gray-700">
-
-                    <div class="flex flex-wrap gap-2 mb-2">
-
-                      <span
-
-                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
-
-                        >9 Brands</span
-
-                      >
-
-                      <span
-
-                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
-
-                        >3,000 Users</span
-
-                      >
-
-                      <span
-
-                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
-
-                        >2,500 Transactions/Day</span
-
-                      >
-
-                    </div>
-
-                    <p class="text-sm">
-
-                      Identified client’s goals, business and functional requirements.<br>
-
-                      Conducted gap analysis and risk assessment.<br>
-
-                      Evaluated solution vendors in the market.<br>
-
-                      Collaborated with vendors to develop solution proposals, solution functional design & UX/UI design.<br>
-
-                      Reviewed proposals, contracts with client and selected the best option.<br>
-
-                      Documented the process with: solution assessment, business requirements document (BRD), project timeline (WBS), risk assessment, request for proposal (RFP).<br>
-
-                      <em>* Project discontinued after the bidding process.</em>
-
-                    </p>
-
-                    <div class="flex items-center gap-2 text-sm pt-2">
-
-                       <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded"
-
-                         >Solution Analysis</span
-
-                       >
-
-                       <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded"
-
-                         >Vendor Evaluation</span
-
-                       >
-
-                       <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded"
-
-                         >Project Management</span
-
-                       >
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="bg-gray-50 p-5 rounded-lg">
-
-                  <div class="flex items-start mb-4">
-
-                    <div
-
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-purple-100 mr-3"
-
-                    >
-
-                      <i class="ri-calendar-check-line text-purple-600"></i>
-
-                    </div>
-
-                    <div>
-
-                      <h4 class="font-semibold text-gray-900">
-
-                        Factory Canteen Meal Booking
-
-                      </h4>
-
-                      <p class="text-sm text-gray-600">In-house Development</p>
-
-                    </div>
-
-                  </div>
-
-                  <div class="space-y-2 text-gray-700">
-
-                    <div class="flex flex-wrap gap-2 mb-2">
-
-                      <span
-
-                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
-
-                        >1,500 Users</span
-
-                      >
-
-                      <span
-
-                        class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs"
-
-                        >2,500 Transactions/Day</span
-
-                      >
-
-                    </div>
-
-                    <ul class="list-disc list-inside space-y-1 text-sm">
-
-                      <li>Analyzed business and functional requirements</li>
-
-                      <li>Procured necessary equipments</li>
-
-                      <li>Conducted UAT and managed go-live process</li>
-
-                      <li>Provided post-implementation support</li>
-
-                    </ul>
-
-                     <div class="flex items-center gap-2 text-sm pt-2">
-
-                       <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded"
-
-                         >Requirement Analysis</span
-
-                       >
-
-                       <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded"
-
-                         >UAT</span
-
-                       >
-
-                       <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded"
-
-                         >Implementation</span
-
-                       >
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="timeline-item relative pl-12 pb-16">
-
-            <div class="timeline-dot"></div>
-
-            <div
-
-              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
-
-            >
-
-              <div
-
-                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
-
-              >
-
-                <div>
-
-                  <h3 class="text-xl font-semibold text-gray-900">
-
-                    Business Applications Support Lead
-
-                  </h3>
-
-                  <p class="text-primary font-medium">KPS Mall</p>
-
-                </div>
-
-                <div class="mt-2 md:mt-0 text-gray-600">
-
-                  December 2021 - February 2023 (1 year 3 months)
-
-                </div>
-
-              </div>
-
-              <p class="text-gray-700 mb-6">
-
-                KPS Mall is a B2C and B2B e-commerce grocery startup.
-
-              </p>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-
-                <div class="bg-gray-50 p-5 rounded-lg">
-
-                  <div class="flex items-start mb-4">
-
-                    <div
-
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100 mr-3"
-
-                    >
-
-                      <i class="ri-shopping-cart-line text-indigo-600"></i>
-
-                    </div>
-
-                    <div>
-
-                      <h4 class="font-semibold text-gray-900">
-
-                        Magento-based E-commerce Platform
-
-                      </h4>
-
-                      <p class="text-sm text-gray-600">Mobile App & Backend</p>
-
-                    </div>
-
-                  </div>
-
-                  <div class="space-y-2 text-gray-700 text-sm">
-
-                    <p>
-
-                      Led the development and support of Magento-based
-
-                      e-commerce platform, including mobile apps and backend
-
-                      systems.
-
-                    </p>
-
-                    <div class="mt-2">
-
-                      <img
-
-                        src="https://readdy.ai/api/search-image?query=professional%2520screenshot%2520of%2520Magento%2520e-commerce%2520dashboard%2520interface%2520with%2520grocery%2520products%252C%2520clean%2520design%252C%2520showing%2520analytics%2520and%2520product%2520management%2520sections%252C%2520neutral%2520colors%252C%2520high%2520quality%2520UI&width=600&height=400&seq=magento01&orientation=landscape"
-
-                        alt="Magento Dashboard"
-
-                        class="w-full h-auto rounded-lg shadow-sm"
-
-                      />
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="bg-gray-50 p-5 rounded-lg">
-
-                  <div class="flex items-start mb-4">
-
-                    <div
-
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 mr-3"
-
-                    >
-
-                      <i class="ri-link-m text-teal-600"></i>
-
-                    </div>
-
-                    <div>
-
-                      <h4 class="font-semibold text-gray-900">
-
-                        System Integration Projects
-
-                      </h4>
-
-                      <p class="text-sm text-gray-600">
-
-                        WMS, TMS, B2B Platform
-
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                  <div class="space-y-2 text-gray-700 text-sm">
-
-                    <ul class="list-disc list-inside space-y-1">
-
-                      <li>Analyzed business processes & requirements</li>
-
-                      <li>Managed requirement & incident backlog (Gitlab)</li>
-
-                      <li>Conducted UAT and go-live testing</li>
-
-                      <li>Updated application mockups/wireframes (Figma)</li>
-
-                      <li>Led hiring process and team development</li>
-
-                    </ul>
-
-                    <div class="flex flex-wrap gap-2 mt-2">
-
-                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
-
-                        >Magento</span
-
-                      >
-
-                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
-
-                        >WMS</span
-
-                      >
-
-                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
-
-                        >TMS</span
-
-                      >
-
-                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
-
-                        >KiotViet</span
-
-                      >
-
-                      <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded"
-
-                        >B2B Platform</span
-
-                      >
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="timeline-item relative pl-12 pb-16">
-
-            <div class="timeline-dot"></div>
-
-            <div
-
-              class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
-
-            >
-
-              <div
-
-                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
-
-              >
-
-                <div>
-
-                  <h3 class="text-xl font-semibold text-gray-900">
-
-                    Front Office Applications Specialist
-
-                  </h3>
-
-                  <p class="text-primary font-medium">Central Retail Vietnam</p>
-
-                </div>
-
-                <div class="mt-2 md:mt-0 text-gray-600">
-
-                  May 2019 - December 2021 (2 years 8 months)
-
-                </div>
-
-              </div>
-
-              <p class="text-gray-700 mb-6">
-
-                Central Retail is one of the largest multi-format foreign
-
-                retailers in Vietnam with over 40 stores across multiple formats
-
-                including grocery, sport & fashion, and playground.
-
-              </p>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-
-                <div class="bg-gray-50 p-5 rounded-lg">
-
-                  <div class="flex items-start mb-4">
-
-                    <div
-
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-red-100 mr-3"
-
-                    >
-
-                      <i class="ri-terminal-box-line text-red-600"></i>
-
-                    </div>
-
-                    <div>
-
-                      <h4 class="font-semibold text-gray-900">
-
-                        Nationwide POS System Replacement
-
-                      </h4>
-
-                      <p class="text-sm text-gray-600">40+ Retail Locations</p>
-
-                    </div>
-
-                  </div>
-
-                  <div class="space-y-2 text-gray-700 text-sm">
-
-                    <p>
-
-                      In the development and implemenation team of a new POS system across all
-
-                      retail locations.
-
-                    </p>
-
-                    <ul class="list-disc list-inside space-y-1 mt-2">
-
-                      <li>Conducted requirement analysis, data mapping and UAT</li>
-
-                      <li>Provided business user training</li>
-
-                      <li>Managed system configuration, setup and implementation across stores</li>
-
-                    </ul>
-
-                     <div class="flex items-center gap-2 text-sm pt-2">
-
-                       <span class="bg-red-100 text-red-800 px-2 py-1 rounded"
-
-                         >POS Implementation</span
-
-                       >
-
-                       <span class="bg-red-100 text-red-800 px-2 py-1 rounded"
-
-                         >Requirement Analysis</span
-
-                       >
-
-                       <span class="bg-red-100 text-red-800 px-2 py-1 rounded"
-
-                         >UAT</span
-
-                       >
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="bg-gray-50 p-5 rounded-lg">
-
-                  <div class="flex items-start mb-4">
-
-                    <div
-
-                      class="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 mr-3"
-
-                    >
-
-                      <i class="ri-code-box-line text-yellow-600"></i>
-
-                    </div>
-
-                    <div>
-
-                      <h4 class="font-semibold text-gray-900">
-
-                        In-house Applications Operation & Development
-
-                      </h4>
-
-                      <p class="text-sm text-gray-600">
-
-                        Sales & Loyalty Systems
-
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                  <div class="space-y-2 text-gray-700 text-sm">
-
-                    <ul class="list-disc list-inside space-y-1">
-
-                      <li>Operated nationwide offline POS sales & Promotion/Loyalty systems</li>
-
-                      <li>Collaborated with IT, business teams on in-house applications development</li>
-
-                      <li>Collaborated with third-party vendors on system integrations</li>
-
-                    </ul>
-
-                     <div class="flex items-center gap-2 text-sm pt-2">
-
-                       <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded"
-
-                         >System Operation</span
-
-                       >
-
-                       <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded"
-
-                         >Loyalty Programs</span
-
-                       >
-
-                       <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded"
-
-                         >System Integration</span
-
-                       >
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="timeline-item relative pl-12">
-
-             <div class="timeline-dot"></div>
-
-             <div
-
-                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
-
-                >
-
-                <div
-
-                   class="flex flex-col md:flex-row md:items-center justify-between mb-4"
-
-                   >
-
-                  <div>
-
-                    <h3 class="text-xl font-semibold text-gray-900">
-
-                      Retail POS Support
-
-                    </h3>
-
-                    <p class="text-primary font-medium">BlueBytez POS Solution</p>
-
-                  </div>
-
-                  <div class="mt-2 md:mt-0 text-gray-600">
-
-                    11/2013 – 03/2019 (5 years 5 months)
-
-                  </div>
-
-                </div>
-
-                <p class="text-gray-700 mb-6">
-
-                  BlueBytez develops retail POS solutions.
-
-                </p>
-
-                <div class="space-y-2 text-gray-700 text-sm">
-
-                   <ul class="list-disc list-inside space-y-1">
-
-                    <li>Provided support to F&B chains and retail stores using BlueBytez POS System.</li>
-
-                    <li>Consulted with customers to develop retail POS features.</li>
-
-                    <li>Set up and troubleshooted IT equipment (PC, printer, router, wireless AP).</li>
-
-                    <li>Conducted user training and composed user guides and manuals.</li>
-
-                  </ul>
-
-                   <div class="flex items-center gap-2 text-sm pt-2">
-
-                       <span class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded"
-
-                         >POS Support</span
-
-                       >
-
-                       <span class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded"
-
-                         >IT Hardware Support</span
-
-                       >
-
-                        <span class="bg-cyan-100 text-cyan-800 px-2 py-1 rounded"
-
-                         >User Training</span
-
-                       >
-
-                    </div>
-
-                </div>
-
-             </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section id="certifications" class="py-20 bg-gray-50">
-
-  <div class="container mx-auto px-6">
-
-    <div class="text-center mb-16">
-
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">
-
-        Learning and Certifications
-
-      </h2>
-
-    </div>
-
-    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 max-w-4xl mx-auto">
-
-      <ul class="list-disc list-inside space-y-3 text-gray-700">
-
-        <li>Develop no-code apps by Google AppSheet.</li>
-
-        <li>Produce some business analysis deliverables (BRD, Use Case, User Story, Wireframe, Prototype): School Lunch Ordering System at <a href="https://github.com/hhoanganh/slos" target="_blank" class="text-primary hover:underline">https://github.com/hhoanganh/slos</a></li>
-
-      </ul>
-
-      <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Online courses:</h4>
-
-      <ul class="list-disc list-inside space-y-3 text-gray-700">
-
-          <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/JYXBPDBXARTK" target="_blank" class="text-primary hover:underline">Software Product Management – Coursera</a></li>
-
-          <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FQTP9K8T2N4Q" target="_blank" class="text-primary hover:underline">Project Management: Specialization – Google</a></li>
-
-          <li><a href="https://www.coursera.org/account/accomplishments/verify/QLAHRRMMV4G7" target="_blank" class="text-primary hover:underline">Foundations of User Experience (UX) Design – Google</a></li>
-
-          <li><a href="https://www.linkedin.com/learning/certificates/a16ce1cf4e94bca97696a10c3c2196bb3b96be447111fb480f1efb474209b088" target="_blank" class="text-primary hover:underline">Business Analysis Foundations – LinkedIn</a></li>
-
-          <li><a href="https://www.coursera.org/account/accomplishments/specialization/MU5EN2W3NR9K" target="_blank" class="text-primary hover:underline">Omnichannel Retail Strategy – Coursera</a></li>
-
-          <li><a href="https://www.coursera.org/account/accomplishments/verify/L3FU93UQCWBZ" target="_blank" class="text-primary hover:underline">Supply Chain Management for E-commerce – Coursera</a></li>
-
-          <li><a href="https://www.coursera.org/account/accomplishments/specialization/WEZ1AGNTF21H" target="_blank" class="text-primary hover:underline">Digital Marketing & E-commerce – Google</a></li>
-
-          <li><a href="https://www.coursera.org/account/accomplishments/specialization/MBTRGPYLPAFX" target="_blank" class="text-primary hover:underline">Building No-Code Apps with AppSheet - Google</a></li>
-
-      </ul>
-
-    </div>
-
-  </div>
-
-</section>
-
-    <footer class="bg-gray-900 text-white py-12">
-
-      <div class="container mx-auto px-6">
-
-        <div class="flex flex-col md:flex-row justify-between items-center">
-
-          <div class="mb-6 md:mb-0">
-
-            <div class="text-2xl font-['Pacifico'] text-white mb-2">
-
-              Huynh Hoang Anh
-
-            </div>
-
-            <p class="text-gray-400">IT Solution Consultant / IT Business Analyst / IT Business Application Operation</p>
-
-          </div>
-
-          <div class="flex space-x-6">
-
-            <a
-
-              href="mailto:hoanganhhuynh87@gmail.com"
-
-              class="text-gray-400 hover:text-white transition-colors"
-
-            >
-
-              <div
-
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
-
-              >
-
-                <i class="ri-mail-line"></i>
-
-              </div>
-
-            </a>
-
-            <a
-
-              href="https://www.linkedin.com/in/huynhhoanganh/"
-
-              target="_blank"
-
-              class="text-gray-400 hover:text-white transition-colors"
-
-            >
-
-              <div
-
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
-
-              >
-
-                <i class="ri-linkedin-box-line"></i>
-
-              </div>
-
-            </a>
-
-            <a
-
-              href="tel:0777717991"
-
-              class="text-gray-400 hover:text-white transition-colors"
-
-            >
-
-              <div
-
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
-
-              >
-
-                <i class="ri-phone-line"></i>
-
-              </div>
-
-            </a>
-
-          </div>
-
-        </div>
-
-        <div
-
-          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm"
-
-        >
-
-          <p>&copy; 2025 Huynh Hoang Anh. All rights reserved.</p>
-
-          <p class="mt-2">Last updated: June 8, 2025</p>
-
-        </div>
-
-      </div>
-
-    </footer>
-
-    <script id="mobile-menu-script">
-
-      document.addEventListener("DOMContentLoaded", function () {
-
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        mobileMenuButton.addEventListener("click", function () {
-
-          mobileMenu.classList.toggle("hidden");
-
-        });
-
-        // Close mobile menu when clicking on a link
-
-        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
-
-        mobileMenuLinks.forEach((link) => {
-
-          link.addEventListener("click", function () {
-
-            mobileMenu.classList.add("hidden");
-
-          });
-
-        });
-
-      });
-
-    </script>
-
-    <script id="smooth-scroll-script">
-
-      document.addEventListener("DOMContentLoaded", function () {
-
-        // Smooth scrolling for anchor links
-
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-
-          anchor.addEventListener("click", function (e) {
-
-            e.preventDefault();
-
-            const targetId = this.getAttribute("href");
-
-            if (targetId === "#") return;
-
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-
-              window.scrollTo({
-
-                top: targetElement.offsetTop - 80, // Offset for header
-
-                behavior: "smooth",
-
-              });
-
-            }
-
-          });
-
-        });
-
-      });
-
-    </script>
-
-  </body>
-
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <div class="text-2xl font-['Pacifico'] text-white mb-2">
+              Huynh Hoang Anh
+            </div>
+            <p class="text-gray-400">IT Solution Consultant / IT Business Analyst / IT Business Application Operation</p>
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="mailto:hoanganhhuynh87@gmail.com"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
+              >
+                <i class="ri-mail-line"></i>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/huynhhoanganh/"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
+              >
+                <i class="ri-linkedin-box-line"></i>
+              </div>
+            </a>
+            <a
+              href="tel:0777717991"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <div
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700"
+              >
+                <i class="ri-phone-line"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm"
+        >
+          <p>&copy; 2025 Huynh Hoang Anh. All rights reserved.</p>
+          <p class="mt-2">Last updated: June 7, 2025</p>
+        </div>
+      </div>
+    </footer>
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        mobileMenuLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      });
+    </script>
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80, // Offset for header
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
